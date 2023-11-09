@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames";
 import classes from "./Sidebar.module.scss";
 import { useState } from "react";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 interface SidebarProps {
   className?: string;
@@ -10,7 +11,7 @@ const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
-    setCollapsed((prev) => !prev );
+    setCollapsed((prev) => !prev);
   };
 
   return (
@@ -22,6 +23,9 @@ const Sidebar = ({ className }: SidebarProps) => {
       )}
     >
       <button onClick={onToggle}>Toogle</button>
+      <div className={classes.switchers}>
+        <ThemeSwitcher />
+      </div>
     </div>
   );
 };

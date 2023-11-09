@@ -15,7 +15,7 @@ export const App = () => {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <ThemeSwitcher />
+ 
       <Navbar />
       <div className="content-page">
         <Sidebar />
