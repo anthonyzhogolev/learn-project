@@ -1,4 +1,4 @@
-import { classNames } from './classNames'
+import { classNames } from 'shared/lib/classNames'
 
 describe('classNames', () => {
     it('should return className as 1st param', () => {

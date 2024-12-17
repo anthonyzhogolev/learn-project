@@ -2,20 +2,31 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest:true
+    jest: true,
   },
   settings: {
     react: {
       version: "detect", // React version. "detect" automatically picks the version you have installed.
     },
   },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  extends: [
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "plugin:i18next/recommended",
+  ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [
+        ".eslintrc.{js,cjs}",
+        "jest.config.{js,cjs,ts}",
+        "**/src/**/*.test.{ts,tsx}",
+      ],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
       parserOptions: {
         sourceType: "script",
         project: ["./tsconfig.json"],
@@ -28,7 +39,7 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     project: ["./tsconfig.json"],
   },
-  plugins: ["react"],
+  plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
     semi: "off",
     "react/react-in-jsx-scope": "off",
@@ -38,5 +49,5 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-floating-promises": [2, { ignoreVoid: true }],
   },
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js", "**/**.test.tsx"],
 };
