@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames'
 import classes from './NotFoundPage.module.scss'
 import { useTranslation } from 'react-i18next'
 

@@ -7,13 +7,14 @@ import { classNames } from 'shared/lib/classNames'
 
 import './styles/index.scss'
 import { Sidebar } from 'widgets/Sidebar'
+import Loader from 'shared/ui/Loader'
 
 export const App = () => {
     const { theme } = useTheme()
 
     return (
         <div className={classNames('app', {}, [theme as string])}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />

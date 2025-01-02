@@ -12,7 +12,7 @@ module.exports = {
   extends: [
     "standard-with-typescript",
     "plugin:react/recommended",
-    "plugin:i18next/recommended",
+    "plugin:i18next/recommended"
   ],
   overrides: [
     {
@@ -45,9 +45,17 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent": [2, 4],
     indent: "off",
+    "@typescript-eslint/strict-boolean-expressions":"warn",
     "@typescript-eslint/indent": [2, 4],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-floating-promises": [2, { ignoreVoid: true }],
+    "i18next/no-literal-string": [
+      "error",
+      {
+        markupOnly: true,
+        ignoreAttribute: ["data-testid", "to"],
+      },
+    ],
   },
-  ignorePatterns: [".eslintrc.js", "**/**.test.tsx"],
+  ignorePatterns: [".eslintrc.js", "**/**.test.tsx", "node_modules"],
 };

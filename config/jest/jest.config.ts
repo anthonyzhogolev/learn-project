@@ -48,8 +48,8 @@ const config = {
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    },
+        '\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    }
 
     // All imported modules in your tests should be mocked automatically
     // automock: false,
