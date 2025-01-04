@@ -1,8 +1,9 @@
 {
   "Тестовый перевод": "Test example",
-  "Перевод": "Translate",
   "О сайте": "About",
+  "Главная": "Main",
   "Язык": "English",
   "Страница не найдена": "Page not found",
-  "Сменить язык": "Toogle"
+  "Сменить язык": "Toogle lang",
+  "Свернуть":"Collapse"
 }
