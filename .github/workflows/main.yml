@@ -12,3 +12,5 @@ jobs:
         uses: actions/setup-node@v4
       - name: Eslint checks
         run: npm run lint
+      - name: Run unit tests
+        run: npm run unit
