@@ -1,7 +1,8 @@
 name: Learn Project Action
 on:
   pull_request:
-    branches: [$default-branch]
+    branches:
+      - master
 jobs:
   pipeline:
     runs-on: ubuntu-latest
