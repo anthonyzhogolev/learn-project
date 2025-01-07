@@ -16,7 +16,9 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Eslint checks
+      - name: Eslint ts
         run: npm run lint
+      - name: Eslint scss
+        run: npm run lint:scss
       - name: Run unit tests
-        run: npm run unit
+        run: npm run test:unit
