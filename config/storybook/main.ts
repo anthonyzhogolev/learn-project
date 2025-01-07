@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/react-webpack5'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import path from 'path'
 import type webpack from 'webpack'
+
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const config: StorybookConfig = {
@@ -34,7 +35,7 @@ const config: StorybookConfig = {
         config.module?.rules?.push(buildCssLoader(true))
         config.plugins?.push(new MiniCssExtractPlugin())
 
-        const defaultSvgRule = config.module?.rules?.find(rule => rule !== undefined && rule !== '...' && /svg/.test(rule.test))
+        const defaultSvgRule = config.module?.rules?.find(rule => rule !== '...' && rule.test instanceof RegExp && rule.test?.test !== undefined && rule.test?.test('.svg'))
 
         if (defaultSvgRule !== undefined && defaultSvgRule !== '...') {
             defaultSvgRule.exclude = /\.svg$/i
