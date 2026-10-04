@@ -40,13 +40,13 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     project: ["./tsconfig.json"],
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "i18next", "eslint-plugin-react-hooks"],
   rules: {
-    semi: "off",
+    semi: "always",
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent": [2, 4],
     indent: "off",
-    "@typescript-eslint/strict-boolean-expressions":"warn",
+    "@typescript-eslint/strict-boolean-expressions": "warn",
     "@typescript-eslint/indent": [2, 4],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-floating-promises": [2, { ignoreVoid: true }],
@@ -57,6 +57,10 @@ module.exports = {
         ignoreAttribute: ["data-testid", "to"],
       },
     ],
+    // Core hooks rules
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+
   },
   ignorePatterns: [".eslintrc.js", "**/**.test.tsx", "node_modules"],
 };

@@ -7,14 +7,17 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 import PageError from 'widgets/PageError/ui/PageError'
 
 import 'shared/config/i18n'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
 render(
-    <BrowserRouter>
-        <ErrorBoundary fallback={<Suspense fallback=""><PageError/></Suspense>}>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
+    <StoreProvider initialState={{ counter: { value: 0 } }}>
+        <BrowserRouter>
+            <ErrorBoundary fallback={<Suspense fallback=""><PageError /></Suspense>}>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>,
     document.getElementById('root')
 )
