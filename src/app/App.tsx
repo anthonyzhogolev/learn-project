@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react'
 
-import { AppRouter, useTheme } from 'app/providers'
+import { AppRouter } from 'app/providers'
 import { Navbar } from 'widgets/Navbar'
 import { classNames } from 'shared/lib';
 
@@ -10,10 +10,10 @@ import { Counter } from 'entities/Counter';
 import './styles/index.scss'
 
 export const App = () => {
-    const { theme } = useTheme()
+   
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <div className={classNames('app', {}, [theme as string])}>
+        <div className={classNames('app', {}, [])}>
             <Suspense fallback={<Loader />}>
                 <Navbar />
                 <button onClick={() => { setIsOpen(true) }}>{isOpen ? 'x' : 'open'}</button>

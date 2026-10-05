@@ -7,7 +7,7 @@ describe('Sidebar', () => {
         renderWithTranslation(<Sidebar/>)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     })
-    it.only('should toogle sidebar', () => {
+    it('should toogle sidebar', () => {
         renderWithTranslation(<Sidebar/>)
             
         fireEvent.click(screen.getByTestId('sidebar-toggle'));
